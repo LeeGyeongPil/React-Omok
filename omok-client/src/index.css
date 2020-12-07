@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+#root { position: fixed; width: 100%; height:100%; }
+#root-wrap { position: relative; display: inline; }
+
+/* Game-Wrap */
+#game-wrap { width: 760px; height: 570px; margin: 0 auto; top: calc(50% - 285px); position: relative; border: 4px ridge #ccc; }
+#game-wrap.turn { border: 4px ridge #3f4eda; }
+
+/* Game-Board-Wrap */
+#game-board-wrap { width: 570px; height: 100%; display:block; position: relative; float:left; }
+#game-board-wrap .game-board { padding: 15px; display: inline-block; position: absolute; }
+#game-board-wrap .game-board .game-board-square { width:30px; height:30px; /*border: 1px solid #ccc;*/ box-sizing: border-box; display: inline-block; float:left; }
+#game-board-wrap .game-board .game-board-round { float: left; width: 10px; height: 10px; margin-left: -5px; margin-top: -5px; margin-bottom: -5px; border: 1px solid #333; box-sizing: border-box; background: #333; border-radius: 5px; position: relative; }
+#game-board-wrap .game-board-cell-wrap { position: absolute; }
+#game-board-wrap .game-board-cell-wrap .game-board-cell { width:30px; height:30px; box-sizing: border-box; display: inline-block; float:left; }
+#game-board-wrap .game-board-cell-wrap .game-board-cell.black { border: 15px solid #000; border-radius: 15px; }
+#game-board-wrap .game-board-cell-wrap .game-board-cell.white { border: 1px solid #000; border-radius: 15px; background: #fff; }
+
+/* Game-Panel-Wrap */
+#game-panel-wrap { width: 190px; height:100%; display:block; position: relative; float:left; border-left: 4px ridge #ccc; box-sizing: border-box; }
+#game-panel-wrap .profile-wrap { width: 100%; height: 25%; position: relative; display: inline-block; float: right; box-sizing: border-box; border-bottom: 4px ridge #ccc; text-align: center; }
+#game-panel-wrap .profile-wrap .profile-name { padding: 5px; }
+#game-panel-wrap .profile-wrap .profile-name-change {}
+#game-panel-wrap .profile-wrap .game-action-btn { width: 100px; height: 27px; box-sizing: border-box; border: 2px outset #eee; margin-left: 3px; display: inline-block; text-align: center; bottom: 3px; cursor: pointer;  }
+
+#game-panel-wrap .chat-wrap { width: 100%; height: 75%; position: relative; display: inline-block; float: right; box-sizing: border-box; }
+#game-panel-wrap .chat-wrap .talk-msg-box { height: calc(100% - 32px); overflow-x: hidden; overflow-y: auto; }
+#game-panel-wrap .chat-wrap .talk-msg-box .talk-row { margin-left: 5px;}
+#game-panel-wrap .chat-wrap .talk-msg-box .talk-row.alert { color: red; }
+#game-panel-wrap .chat-wrap .talk-msg-box .talk-row .talk-name {}
+#game-panel-wrap .chat-wrap .talk-msg-box .talk-row .talk-msg { overflow-wrap: anywhere; display: inline-block; }
+#game-panel-wrap .chat-wrap .talk-input { padding: 2px; width: 100%; position: relative; box-sizing: border-box; display: block; border-top: 1px solid #999; }
+#game-panel-wrap .chat-wrap .talk-input .msg-text-box { width: calc(100% - 43px); box-sizing: border-box; border: 0; height: 25px; float: left; }
+#game-panel-wrap .chat-wrap .talk-input .talk-send-btn { width: 40px; height: 27px; box-sizing: border-box; border: 2px outset #eee; margin-left: 3px; display: inline-block; float: left; }
+
+/* Game-Layout-Wrap */
+#game-layout-wrap { width:100%; height:100%; position: fixed; display: none; top: 0; left: 0;}
+#game-layout-wrap.active { display: block; }
+#game-layout-wrap .game-layout-popup {}
+
+/* Game-Match-Wrap */
+#game-match-wrap { text-align: center; top: calc(50% - 55px); position: absolute; width: 100%; }
+#game-match-wrap .game-match-popup { width: 250px; margin: 0 auto; background: #fff; border: 3px ridge #eee; position: relative; display: inline-block; }
+#game-match-wrap .layout-title { text-align: left; width: 100%; padding: 3px; box-sizing: border-box; border-bottom: 3px ridge #eee; }
+#game-match-wrap .layout-contents {}
+#game-match-wrap .layout-contents .layout-label { width: 100px; float: left; box-sizing: border-box; text-align: right; }
+#game-match-wrap .layout-contents .layout-label-context { width: 150px; float: left; box-sizing: border-box; }
+#game-match-wrap .layout-btn { border: 2px #eee outset; width: calc(50% - 2px); box-sizing: border-box; text-align: center; padding: 2px 0; cursor:pointer; }
+#game-match-wrap .layout-btn.accept { float: left; }
+#game-match-wrap .layout-btn.accept.active { background: #ffbdbd; }
+#game-match-wrap .layout-btn.decline { float: right; }
